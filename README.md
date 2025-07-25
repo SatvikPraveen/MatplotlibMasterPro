@@ -62,7 +62,23 @@ MatplotlibMasterPro/
 
 ---
 
-## 🧪 Sample Datasets
+## 📸 Sample Visualizations
+
+Here are a few sample plots from the project:
+
+![Line Plot](exports/line_plot.png)
+*Basic line chart with annotations and grid*
+
+![Colormap Plot](exports/revenue_colormap_sequential.png)
+*Revenue visualization using sequential colormaps*
+
+![Dashboard Example](exports/multipanel_dashboard.png)
+*Composite dashboard layout using `subplots` and `gridspec`*
+
+![Demo](exports/revenue_vs_units_scatter.mp4)
+*🚀 Quick preview of MatplotlibMasterPro in action*
+
+## 🧪 Datasets Created and Used
 
 | Filename           | Description                                  |
 | ------------------ | -------------------------------------------- |
