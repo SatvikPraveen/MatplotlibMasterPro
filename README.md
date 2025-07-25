@@ -64,20 +64,35 @@ MatplotlibMasterPro/
 
 ## 📸 Sample Visualizations
 
-Here are a few sample plots from the project:
+Here are a few sample dashboards from the project:
 
-![Line Plot](exports/line_plot.png)
-*Basic line chart with annotations and grid*
+![📊 Sales Dashboard (2x2)](exports/dashboards/sales_dashboard_2x2.png)  
+*Simple 2x2 dashboard layout with default axes*
+<br>
 
-![Colormap Plot](exports/revenue_colormap_sequential.png)
-*Revenue visualization using sequential colormaps*
+![🧩 Gridspec Dashboard](exports/dashboards/sales_dashboard_gridspec.png)  
+*Advanced layout using `GridSpec` for flexible placement*
+<br>
 
-![Dashboard Example](exports/multipanel_dashboard.png)
-*Composite dashboard layout using `subplots` and `gridspec`*
+![🪟 Subplots Layout](exports/dashboards/sales_dashboard_subplots_2x2.png)  
+*Subplots with shared axes and tight layout for cleaner visuals*
+<br>
 
-![Demo](exports/revenue_vs_units_scatter.mp4)
-*🚀 Quick preview of MatplotlibMasterPro in action*
+## 🎞️ Animated Visualizations
 
+Here are a few animated visualizations exported from the project:
+
+- 🎬 [`product_revenue_bars.mp4`](exports/product_revenue_bars.mp4)  
+  *Animated bar chart showing revenue distribution by product*
+
+- 📈 [`revenue_growth.mp4`](exports/revenue_growth.mp4)  
+  *Revenue growth over time with animated line movement*
+
+- 📊 [`units_revenue_growth.mp4`](exports/units_revenue_growth.mp4)  
+  *Dual-plot animation comparing units sold and revenue growth*
+
+- 🔄 [`revenue_vs_units_scatter.mp4`](exports/revenue_vs_units_scatter.mp4)  
+  *Dynamic scatter plot showing correlation over time*
 ## 🧪 Datasets Created and Used
 
 | Filename           | Description                                  |
