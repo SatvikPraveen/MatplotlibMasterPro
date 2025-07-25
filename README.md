@@ -4,6 +4,13 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-darkgreen.svg)](https://www.python.org/)
 [![Jupyter Notebooks](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 [![Matplotlib Focused](https://img.shields.io/badge/Matplotlib-100%25-brightgreen.svg)](https://matplotlib.org/)
+[![Project Status](https://img.shields.io/badge/Status-Active-success.svg)](#)
+[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-critical.svg)](#)
+[![Dashboard Ready](https://img.shields.io/badge/Dashboards-Included-blueviolet.svg)](#)
+[![Animations](https://img.shields.io/badge/Animations-MP4/GIF-red.svg)](#)
+[![Streamlit Compatible](https://img.shields.io/badge/Streamlit-Ready-ff4b4b.svg)](#)
+[![Portfolio Project](https://img.shields.io/badge/Use%20Case-Portfolio%20Project-lightgrey.svg)](#)
+[![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue.svg)](#)
 
 ---
 
