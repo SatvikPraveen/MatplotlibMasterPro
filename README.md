@@ -1,0 +1,151 @@
+# 📊 MatplotlibMasterPro
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-darkgreen.svg)](https://www.python.org/)
+[![Jupyter Notebooks](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
+[![Matplotlib Focused](https://img.shields.io/badge/Matplotlib-100%25-brightgreen.svg)](https://matplotlib.org/)
+
+---
+
+## 🧠 Project Overview
+
+**MatplotlibMasterPro** is a complete, portfolio-grade project designed to **master data visualization using `matplotlib.pyplot`**.  
+It’s structured to serve both as a:
+
+- 📘 **Self-paced learning notebook series**
+- 💼 **Professional showcase project**
+
+Whether you’re revisiting fundamentals or creating complex dashboards — this project brings it all together in one place.
+
+---
+
+## 📁 Project Structure
+
+```bash
+MatplotlibMasterPro/
+├── notebooks/               # Step-by-step concept notebooks
+├── utils/                   # Plotting utility scripts
+├── cheatsheets/             # Markdown/PDF visual guides
+├── datasets/                # Toy + Realistic datasets
+├── exports/                 # Exported plots and dashboards
+├── streamlit_app.py         # Streamlit dashboard viewer
+├── requirements.txt         # Python dependencies
+├── Dockerfile               # Dockerized Jupyter environment
+├── .dockerignore            # Docker ignore rules
+├── .gitignore               # Git ignore rules
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 📚 Notebooks Roadmap
+
+| Notebook                     | Description                                         |
+| ---------------------------- | --------------------------------------------------- |
+| `01_line_plot.ipynb`         | Basics of `plot()`, labels, legend                  |
+| `02_bar_scatter.ipynb`       | Bar charts and scatter plots                        |
+| `03_histogram_pie.ipynb`     | Distributions and pie charts                        |
+| `04_subplots_axes.ipynb`     | Subplotting and axes control                        |
+| `05_customization.ipynb`     | Colors, linestyles, themes                          |
+| `06_advanced_plots.ipynb`    | Log plots, heatmaps, fill areas                     |
+| `07_annotations.ipynb`       | Labels, arrows, text, highlights                    |
+| `08_images_and_grids.ipynb`  | `imshow`, `matshow`, grids                          |
+| `09_interactive.ipynb`       | Widgets, sliders, `%matplotlib notebook`            |
+| `10_export_style.ipynb`      | Save figures, DPI, formats, themes                  |
+| `11_composite_plots.ipynb`   | Layered plots, twin axes, broken axes               |
+| `12_inset_zoom.ipynb`        | Inset plots, zoomed views, anchored boxes           |
+| `13_comparative_plots.ipynb` | Grouped bars, stacked areas, side-by-side views     |
+| `14_colormaps_themes.ipynb`  | Colormaps, gradients, diverging schemes             |
+| `15_timeseries.ipynb`        | Time-series: trends, seasonal cycles                |
+| `16_dashboards.ipynb`        | Multi-panel dashboards using `subplots`, `gridspec` |
+
+---
+
+## 🧪 Sample Datasets
+
+| Filename           | Description                                  |
+| ------------------ | -------------------------------------------- |
+| `sales_data.csv`   | Monthly product-wise sales and revenue       |
+| `covid_cases.csv`  | Cumulative COVID-19 cases across U.S. states |
+| `stock_prices.csv` | OHLC & volume for multiple stock tickers     |
+| `weather_data.csv` | Daily city-level temperature and humidity    |
+
+> All datasets are generated using `pandas` and `numpy`, and stored under [`datasets/`](datasets/).
+
+---
+
+## 🛠️ Utilities
+
+- `utils/plot_utils.py` — Custom plot wrappers (comparative, themed, exportable)
+- `utils/theme_utils.py` — Reusable themes like `dark`, `minimal`, and `corporate`
+
+---
+
+## 🧾 Cheatsheets
+
+Quick-reference syntax guides available at:
+
+- [`cheatsheets/matplotlib_cheatsheet.md`](cheatsheets/matplotlib_cheatsheet.md)
+
+---
+
+## 🌐 Streamlit App
+
+Explore exported dashboards interactively:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Or via Docker:
+
+```bash
+docker build -t matplotlibmasterpro .
+docker run -p 8501:8501 matplotlibmasterpro
+```
+
+---
+
+## 🐳 Dockerized Setup
+
+Run a fully isolated Jupyter + Streamlit environment with ease.
+
+```bash
+# Build the container
+docker build -t matplotlibmasterpro .
+
+# Launch Jupyter
+docker run -p 8888:8888 matplotlibmasterpro
+```
+
+> Tokenless access enabled by default. Use `--rm -d` to run in background.
+
+---
+
+## 🚀 Future Enhancements
+
+- [x] Streamlit integration for dashboard browsing
+- [x] JupyterLab with Docker
+- [ ] PDF report export
+- [ ] Pip-installable library version
+
+---
+
+## 💼 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for full details.
+
+---
+
+## 🙌 Contributing
+
+Want to contribute?
+
+- ✅ Fork the repo
+- 🔧 Create a feature branch
+- 🔁 Submit a PR with your improvements
+- 🐛 Open issues for bugs or suggestions
+
+---

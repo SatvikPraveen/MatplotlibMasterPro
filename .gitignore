@@ -1,0 +1,71 @@
+# ================================
+# 🔧 Byte-compiled / cache files
+# ================================
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+
+# ================================
+# 📓 Jupyter Notebook Checkpoints
+# ================================
+.ipynb_checkpoints/
+*.ipynb~
+
+# ================================
+# 🛠️ IDE settings
+# ================================
+.vscode/
+.idea/
+
+# ================================
+# 📦 Project virtual environment
+# ================================
+mp_py_env/
+venv/
+env/
+
+# ================================
+# ⚙️ Streamlit cache (if added later)
+# ================================
+.streamlit/
+**/.streamlit/
+
+# ================================
+# 🐳 Docker overrides (optional)
+# ================================
+docker-compose.override.yml
+
+# ================================
+# 🍏 macOS system files
+# ================================
+.DS_Store
+
+# ================================
+# 📄 Logs and runtime files
+# ================================
+*.log
+*.pid
+
+# ================================
+# 🔐 Environment variable files
+# ================================
+.env
+*.env
+
+# ================================
+# 🚫 Build artifacts (if packaged)
+# ================================
+build/
+dist/
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# ================================
+# ✅ DO NOT IGNORE EXPORTS!
+# ================================
+# (Keep dashboards/images for portfolio!)
+!exports/
