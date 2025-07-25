@@ -64,11 +64,7 @@ MatplotlibMasterPro/
 
 ## 📸 Sample Visualizations
 
-Here are a few sample dashboards from the project:
-
-![📊 Sales Dashboard (2x2)](exports/dashboards/sales_dashboard_2x2.png)  
-*Simple 2x2 dashboard layout with default axes*
-<br>
+Here are two dashboards from the project:
 
 ![🧩 Gridspec Dashboard](exports/dashboards/sales_dashboard_gridspec.png)  
 *Advanced layout using `GridSpec` for flexible placement*
@@ -80,7 +76,7 @@ Here are a few sample dashboards from the project:
 
 ## 🎞️ Animated Visualizations
 
-Here are a few animated visualizations exported from the project:
+Here are animated visualizations exported from the project:
 
 - 🎬 [`product_revenue_bars.mp4`](exports/product_revenue_bars.mp4)  
   *Animated bar chart showing revenue distribution by product*
