@@ -168,8 +168,7 @@ docker run -p 8888:8888 matplotlibmasterpro
 
 ## 💼 License
 
-This project is licensed under the **MIT License**.
-See the [LICENSE](LICENSE) file for full details.
+This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0). See the [LICENSE](./LICENSE) file for more details.
 
 ---
 
