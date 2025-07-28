@@ -1,6 +1,6 @@
 # 📊 MatplotlibMasterPro
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-darkgreen.svg)](https://www.python.org/)
 [![Jupyter Notebooks](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 [![Matplotlib Focused](https://img.shields.io/badge/Matplotlib-100%25-brightgreen.svg)](https://matplotlib.org/)
