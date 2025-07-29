@@ -37,7 +37,7 @@ MatplotlibMasterPro/
 ├── exports/                 # Exported plots and dashboards
 ├── streamlit_app.py         # Streamlit dashboard viewer
 ├── requirements.txt         # Minimal dependencies to run the project
-├── requirements_dev.txt     # Full dev environment (notebooks, testing, export)
+├── requirements_dev.txt     # Full dev environment
 ├── Dockerfile               # Dockerized Jupyter environment
 ├── .dockerignore            # Docker ignore rules
 ├── .gitignore               # Git ignore rules
