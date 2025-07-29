@@ -36,7 +36,8 @@ MatplotlibMasterPro/
 ├── datasets/                # Toy + Realistic datasets
 ├── exports/                 # Exported plots and dashboards
 ├── streamlit_app.py         # Streamlit dashboard viewer
-├── requirements.txt         # Python dependencies
+├── requirements.txt         # Minimal dependencies to run the project
+├── requirements_dev.txt     # Full dev environment (notebooks, testing, export)
 ├── Dockerfile               # Dockerized Jupyter environment
 ├── .dockerignore            # Docker ignore rules
 ├── .gitignore               # Git ignore rules
@@ -74,11 +75,11 @@ MatplotlibMasterPro/
 Here are two dashboards from the project:
 
 ![🧩 Gridspec Dashboard](exports/dashboards/sales_dashboard_gridspec.png)  
-*Advanced layout using `GridSpec` for flexible placement*
+_Advanced layout using `GridSpec` for flexible placement_
 <br>
 
 ![🪟 Subplots Layout](exports/dashboards/sales_dashboard_subplots_2x2.png)  
-*Subplots with shared axes and tight layout for cleaner visuals*
+_Subplots with shared axes and tight layout for cleaner visuals_
 <br>
 
 ## 🎞️ Animated Visualizations
@@ -86,16 +87,17 @@ Here are two dashboards from the project:
 Here are animated visualizations exported from the project:
 
 - 🎬 [`product_revenue_bars.mp4`](exports/product_revenue_bars.mp4)  
-  *Animated bar chart showing revenue distribution by product*
+  _Animated bar chart showing revenue distribution by product_
 
 - 📈 [`revenue_growth.mp4`](exports/revenue_growth.mp4)  
-  *Revenue growth over time with animated line movement*
+  _Revenue growth over time with animated line movement_
 
 - 📊 [`units_revenue_growth.mp4`](exports/units_revenue_growth.mp4)  
-  *Dual-plot animation comparing units sold and revenue growth*
+  _Dual-plot animation comparing units sold and revenue growth_
 
 - 🔄 [`revenue_vs_units_scatter.mp4`](exports/revenue_vs_units_scatter.mp4)  
-  *Dynamic scatter plot showing correlation over time*
+  _Dynamic scatter plot showing correlation over time_
+
 ## 🧪 Datasets Created and Used
 
 | Filename           | Description                                  |
