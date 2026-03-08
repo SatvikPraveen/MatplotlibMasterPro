@@ -61,12 +61,36 @@ MatplotlibMasterPro/
 | `08_images_and_grids.ipynb`  | `imshow`, `matshow`, grids                          |
 | `09_interactive.ipynb`       | Widgets, sliders, `%matplotlib notebook`            |
 | `10_export_style.ipynb`      | Save figures, DPI, formats, themes                  |
-| `11_composite_plots.ipynb`   | Layered plots, twin axes, broken axes               |
-| `12_inset_zoom.ipynb`        | Inset plots, zoomed views, anchored boxes           |
+| `11_animation.ipynb`         | Animated plots, FuncAnimation, saving MP4/GIF       |
+| `12_stats_distribution.ipynb`| Statistical distributions and plots                 |
 | `13_comparative_plots.ipynb` | Grouped bars, stacked areas, side-by-side views     |
 | `14_colormaps_themes.ipynb`  | Colormaps, gradients, diverging schemes             |
 | `15_timeseries.ipynb`        | Time-series: trends, seasonal cycles                |
 | `16_dashboards.ipynb`        | Multi-panel dashboards using `subplots`, `gridspec` |
+| `17_3d_plots.ipynb`          | 3D scatter, surface, wireframe plots                |
+| `18_statistical_plots.ipynb` | Box plots, violin plots, swarm plots                |
+| `19_error_visualization.ipynb`| Error bars, confidence intervals, fill between     |
+| `20_contour_plots.ipynb`     | Contour, contourf, filled contours, heatmaps        |
+| `21_polar_plots.ipynb`       | Polar coordinates, radial plots, circular data      |
+| `22_composite_plots.ipynb`   | Layered plots, twin axes, broken axes               |
+| `23_inset_zoom.ipynb`        | Inset plots, zoomed views, anchored boxes           |
+
+---
+
+## ✨ Advanced Visualization Features
+
+This project covers **comprehensive matplotlib capabilities** including:
+
+- 📦 **3D Visualizations** — Surface plots, wireframes, 3D scatter plots
+- 📊 **Statistical Analysis** — Box plots, violin plots, distribution comparisons
+- 📉 **Error Visualization** — Error bars, confidence intervals, uncertainty quantification
+- 🗺️ **Field Representation** — Contour plots, filled contours, heatmaps
+- 🔵 **Polar & Circular Data** — Radar charts, rose plots, wind roses
+- 🔄 **Multi-Scale Plots** — Twin axes, layered visualizations, broken axes
+- 🔍 **Detail Views** — Inset plots, zoomed views, magnified regions
+- 🎨 **Publication-Ready Themes** — IEEE, academic, colorblind-friendly palettes
+- 🎬 **Animations** — FuncAnimation, timeline effects, dynamic visualizations
+- 📐 **Complex Layouts** — GridSpec, nested subplots, multi-panel dashboards
 
 ---
 
@@ -126,6 +150,56 @@ Quick-reference syntax guides available at:
 
 ---
 
+## 📖 Documentation & Resources
+
+This project includes comprehensive documentation to support your learning:
+
+- 📋 **[SETUP.md](SETUP.md)** — Complete environment setup guide with activation instructions
+- 💡 **[RECOMMENDATIONS.md](RECOMMENDATIONS.md)** — Prioritized improvement suggestions and project roadmap
+- 🔧 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** — Solutions for common matplotlib issues (backends, fonts, performance, etc.)
+- 📚 **[RESOURCES.md](RESOURCES.md)** — Curated learning resources (courses, books, communities, datasets)
+- 🤝 **[CONTRIBUTING.md](CONTRIBUTING.md)** — Contribution guidelines for the project
+- 📜 **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** — Community standards and behavior expectations
+
+---
+
+## 🚀 Getting Started
+
+### **Option 1: Virtual Environment (Recommended)**
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/SatvikPraveen/MatplotlibMasterPro.git
+   cd MatplotlibMasterPro
+   ```
+
+2. **Use the quick activation script:**
+   ```bash
+   source activate.sh
+   ```
+
+   Or activate manually:
+   ```bash
+   source venv/bin/activate  # macOS/Linux
+   venv\Scripts\activate     # Windows
+   ```
+
+3. **Launch JupyterLab:**
+   ```bash
+   jupyter lab
+   ```
+
+📖 **For detailed setup instructions, see [SETUP.md](SETUP.md)**  
+💡 **For improvement suggestions, see [RECOMMENDATIONS.md](RECOMMENDATIONS.md)**  
+🔧 **For troubleshooting help, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)**  
+📚 **For learning resources, see [RESOURCES.md](RESOURCES.md)**
+
+### **Option 2: Docker (Isolated Environment)**
+
+See the [Dockerized Setup](#-dockerized-setup) section below.
+
+---
+
 ## 🌐 Streamlit App
 
 Explore exported dashboards interactively:
@@ -163,8 +237,15 @@ docker run -p 8888:8888 matplotlibmasterpro
 
 - [x] Streamlit integration for dashboard browsing
 - [x] JupyterLab with Docker
+- [x] Advanced 3D visualizations
+- [x] Statistical plotting techniques
+- [x] Publication-ready themes
+- [x] Comprehensive troubleshooting guide
+- [x] Curated learning resources
 - [ ] PDF report export
 - [ ] Pip-installable library version
+- [ ] Interactive Plotly/Bokeh integrations
+- [ ] Real-world case studies
 
 ---
 
