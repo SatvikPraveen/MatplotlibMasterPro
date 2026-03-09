@@ -37,6 +37,13 @@ MatplotlibMasterPro/
 ├── utils/                   # 🛠️  Plotting utility functions
 │   ├── plot_utils.py        # Line, bar, scatter, histogram helpers
 │   └── theme_utils.py       # Publication-ready themes
+├── docs/                    # 📖 Documentation files
+│   ├── SETUP.md             # Environment setup guide
+│   ├── TROUBLESHOOTING.md   # Common issues and solutions
+│   ├── RESOURCES.md         # Learning materials
+│   ├── RECOMMENDATIONS.md   # Project roadmap
+│   ├── CONTRIBUTING.md      # Contribution guidelines
+│   └── CODE_OF_CONDUCT.md   # Community standards
 ├── cheatsheets/             # 📋 Quick-reference syntax guides
 ├── datasets/                # 📊 Sample CSV datasets
 ├── exports/                 # 💾 Generated plots and dashboards
@@ -44,8 +51,7 @@ MatplotlibMasterPro/
 ├── activate.sh              # ⚡ Quick venv activation script
 ├── requirements.txt         # 📦 Minimal dependencies
 ├── requirements_dev.txt     # 🔧 Full dev environment
-├── Dockerfile               # 🐳 Dockerized Jupyter environment
-└── Documentation files      # 📖 SETUP, TROUBLESHOOTING, RESOURCES, etc.
+└── Dockerfile               # 🐳 Dockerized Jupyter environment
 ```
 
 ---
@@ -214,12 +220,12 @@ Quick-reference syntax guides available at:
 
 This project includes comprehensive documentation to support your learning:
 
-- 📋 **[SETUP.md](SETUP.md)** — Complete environment setup guide with activation instructions
-- 💡 **[RECOMMENDATIONS.md](RECOMMENDATIONS.md)** — Prioritized improvement suggestions and project roadmap
-- 🔧 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** — Solutions for common matplotlib issues (backends, fonts, performance, etc.)
-- 📚 **[RESOURCES.md](RESOURCES.md)** — Curated learning resources (courses, books, communities, datasets)
-- 🤝 **[CONTRIBUTING.md](CONTRIBUTING.md)** — Contribution guidelines for the project
-- 📜 **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** — Community standards and behavior expectations
+- 📋 **[SETUP.md](docs/SETUP.md)** — Complete environment setup guide with activation instructions
+- 💡 **[RECOMMENDATIONS.md](docs/RECOMMENDATIONS.md)** — Prioritized improvement suggestions and project roadmap
+- 🔧 **[TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** — Solutions for common matplotlib issues (backends, fonts, performance, etc.)
+- 📚 **[RESOURCES.md](docs/RESOURCES.md)** — Curated learning resources (courses, books, communities, datasets)
+- 🤝 **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** — Contribution guidelines for the project
+- 📜 **[CODE_OF_CONDUCT.md](docs/CODE_OF_CONDUCT.md)** — Community standards and behavior expectations
 - 🐍 **[scripts/README.md](scripts/README.md)** — Production scripts documentation
 - 🚀 **[examples/README.md](examples/README.md)** — Quick examples documentation
 - 🧪 **[tests/README.md](tests/README.md)** — Testing guide and best practices
@@ -263,10 +269,10 @@ This project includes comprehensive documentation to support your learning:
    python -m pytest tests/ -v
    ```
 
-📖 **For detailed setup instructions, see [SETUP.md](SETUP.md)**  
-💡 **For improvement suggestions, see [RECOMMENDATIONS.md](RECOMMENDATIONS.md)**  
-🔧 **For troubleshooting help, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)**  
-📚 **For learning resources, see [RESOURCES.md](RESOURCES.md)**
+📖 **For detailed setup instructions, see [SETUP.md](docs/SETUP.md)**  
+💡 **For improvement suggestions, see [RECOMMENDATIONS.md](docs/RECOMMENDATIONS.md)**  
+🔧 **For troubleshooting help, see [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)**  
+📚 **For learning resources, see [RESOURCES.md](docs/RESOURCES.md)**
 
 ### **Option 2: Docker (Isolated Environment)**
 
