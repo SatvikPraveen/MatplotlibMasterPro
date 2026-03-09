@@ -1,13 +1,19 @@
 # utils/plot_utils.py
 
 import os
-from ipywidgets import interact, widgets
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
 from matplotlib import animation
 from matplotlib.animation import FuncAnimation
+
+# Optional import for interactive widgets
+try:
+    from ipywidgets import interact, widgets
+    HAS_IPYWIDGETS = True
+except ImportError:
+    HAS_IPYWIDGETS = False
 
 def line_plot(
     x, y, title="", xlabel="", ylabel="", label=None,
@@ -438,7 +444,15 @@ def interactive_slider_plot(x, y_series_dict, *,
                              xlabel="X", ylabel="Y", title_prefix="Value at index"):
     """
     Create an interactive slider to explore different Y-series with common X.
+    
+    Requires: ipywidgets (install with: pip install ipywidgets)
     """
+    if not HAS_IPYWIDGETS:
+        raise ImportError(
+            "ipywidgets is required for interactive plots. "
+            "Install it with: pip install ipywidgets"
+        )
+    
     @interact(index=widgets.IntSlider(min=0, max=len(x)-1, step=1, value=0))
     def plot(index):
         plt.figure(figsize=(8, 5))
@@ -459,7 +473,15 @@ def dropdown_plot(x, y_series_dict, *,
                   xlabel="X", ylabel="Y", title="Dropdown Series Viewer"):
     """
     Create a dropdown to select which Y-series to plot.
+    
+    Requires: ipywidgets (install with: pip install ipywidgets)
     """
+    if not HAS_IPYWIDGETS:
+        raise ImportError(
+            "ipywidgets is required for interactive plots. "
+            "Install it with: pip install ipywidgets"
+        )
+    
     @interact(series=widgets.Dropdown(options=list(y_series_dict.keys()), description="Series"))
     def plot(series):
         y = y_series_dict[series]
