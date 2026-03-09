@@ -30,19 +30,22 @@ Whether you’re revisiting fundamentals or creating complex dashboards — this
 
 ```bash
 MatplotlibMasterPro/
-├── notebooks/               # Step-by-step concept notebooks
-├── utils/                   # Plotting utility scripts
-├── cheatsheets/             # Markdown/PDF visual guides
-├── datasets/                # Toy + Realistic datasets
-├── exports/                 # Exported plots and dashboards
-├── streamlit_app.py         # Streamlit dashboard viewer
-├── requirements.txt         # Minimal dependencies to run the project
-├── requirements_dev.txt     # Full dev environment
-├── Dockerfile               # Dockerized Jupyter environment
-├── .dockerignore            # Docker ignore rules
-├── .gitignore               # Git ignore rules
-├── README.md
-└── LICENSE
+├── notebooks/               # 📚 Step-by-step concept notebooks (23 total)
+├── scripts/                 # 🐍 Production-ready Python scripts
+├── examples/                # 🚀 Quick copy-paste examples
+├── tests/                   # 🧪 Unit tests for utilities
+├── utils/                   # 🛠️  Plotting utility functions
+│   ├── plot_utils.py        # Line, bar, scatter, histogram helpers
+│   └── theme_utils.py       # Publication-ready themes
+├── cheatsheets/             # 📋 Quick-reference syntax guides
+├── datasets/                # 📊 Sample CSV datasets
+├── exports/                 # 💾 Generated plots and dashboards
+├── streamlit_app.py         # 🌐 Streamlit dashboard viewer
+├── activate.sh              # ⚡ Quick venv activation script
+├── requirements.txt         # 📦 Minimal dependencies
+├── requirements_dev.txt     # 🔧 Full dev environment
+├── Dockerfile               # 🐳 Dockerized Jupyter environment
+└── Documentation files      # 📖 SETUP, TROUBLESHOOTING, RESOURCES, etc.
 ```
 
 ---
@@ -81,6 +84,10 @@ MatplotlibMasterPro/
 
 This project covers **comprehensive matplotlib capabilities** including:
 
+- � **23 Interactive Notebooks** — From basics to advanced techniques
+- 🐍 **5 Production Scripts** — Real-world automation examples
+- 🚀 **5 Quick Examples** — Copy-paste ready templates
+- 🧪 **80+ Unit Tests** — Professional testing practices
 - 📦 **3D Visualizations** — Surface plots, wireframes, 3D scatter plots
 - 📊 **Statistical Analysis** — Box plots, violin plots, distribution comparisons
 - 📉 **Error Visualization** — Error bars, confidence intervals, uncertainty quantification
@@ -88,7 +95,7 @@ This project covers **comprehensive matplotlib capabilities** including:
 - 🔵 **Polar & Circular Data** — Radar charts, rose plots, wind roses
 - 🔄 **Multi-Scale Plots** — Twin axes, layered visualizations, broken axes
 - 🔍 **Detail Views** — Inset plots, zoomed views, magnified regions
-- 🎨 **Publication-Ready Themes** — IEEE, academic, colorblind-friendly palettes
+- 🎨 **8 Publication Themes** — IEEE, academic, colorblind-friendly palettes
 - 🎬 **Animations** — FuncAnimation, timeline effects, dynamic visualizations
 - 📐 **Complex Layouts** — GridSpec, nested subplots, multi-panel dashboards
 
@@ -137,8 +144,61 @@ Here are animated visualizations exported from the project:
 
 ## 🛠️ Utilities
 
-- `utils/plot_utils.py` — Custom plot wrappers (comparative, themed, exportable)
-- `utils/theme_utils.py` — Reusable themes like `dark`, `minimal`, and `corporate`
+Reusable helper functions to accelerate your matplotlib workflow:
+
+- **[`utils/plot_utils.py`](utils/plot_utils.py)** — 20+ functions for common plots (line, bar, scatter, histogram, pie, etc.)
+- **[`utils/theme_utils.py`](utils/theme_utils.py)** — 8 publication-ready themes (dark, minimal, corporate, IEEE, colorblind-friendly, etc.)
+
+---
+
+## 🐍 Production Scripts
+
+Ready-to-run Python scripts in [`scripts/`](scripts/):
+
+| Script | Description | Command |
+|--------|-------------|---------|
+| **generate_dashboard.py** | Multi-panel sales dashboard | `python scripts/generate_dashboard.py` |
+| **generate_3d_plots.py** | Batch 3D visualizations | `python scripts/generate_3d_plots.py` |
+| **generate_statistical_plots.py** | Box/violin plots | `python scripts/generate_statistical_plots.py` |
+| **batch_export.py** | Export in PNG/PDF/SVG | `python scripts/batch_export.py` |
+| **create_publication_figures.py** | IEEE/academic figures | `python scripts/create_publication_figures.py` |
+
+**Use Cases:** Automated reporting, batch processing, production pipelines
+
+---
+
+## 🚀 Quick Examples
+
+Minimal, copy-paste ready scripts in [`examples/`](examples/):
+
+| Example | Description | Lines of Code |
+|---------|-------------|---------------|
+| **quick_start.py** | Your first plot | ~10 |
+| **publication_figure.py** | Academic paper-ready | ~25 |
+| **batch_process.py** | Process multiple CSVs | ~30 |
+| **custom_theme_example.py** | Apply themes | ~20 |
+| **animation_example.py** | Simple animation | ~18 |
+
+**Use Cases:** Learning, prototyping, templates for projects
+
+---
+
+## 🧪 Testing
+
+Professional unit tests in [`tests/`](tests/):
+
+- **test_plot_utils.py** — Tests for plotting functions (50+ tests)
+- **test_theme_utils.py** — Tests for theme utilities (30+ tests)
+
+**Run tests:**
+```bash
+python -m pytest tests/ -v
+```
+
+**With coverage:**
+```bash
+python -m pytest tests/ --cov=utils --cov-report=html
+```
 
 ---
 
@@ -160,6 +220,9 @@ This project includes comprehensive documentation to support your learning:
 - 📚 **[RESOURCES.md](RESOURCES.md)** — Curated learning resources (courses, books, communities, datasets)
 - 🤝 **[CONTRIBUTING.md](CONTRIBUTING.md)** — Contribution guidelines for the project
 - 📜 **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** — Community standards and behavior expectations
+- 🐍 **[scripts/README.md](scripts/README.md)** — Production scripts documentation
+- 🚀 **[examples/README.md](examples/README.md)** — Quick examples documentation
+- 🧪 **[tests/README.md](tests/README.md)** — Testing guide and best practices
 
 ---
 
@@ -187,6 +250,17 @@ This project includes comprehensive documentation to support your learning:
 3. **Launch JupyterLab:**
    ```bash
    jupyter lab
+   ```
+
+4. **Or run production scripts:**
+   ```bash
+   python scripts/generate_dashboard.py
+   python examples/quick_start.py
+   ```
+
+5. **Run tests (optional):**
+   ```bash
+   python -m pytest tests/ -v
    ```
 
 📖 **For detailed setup instructions, see [SETUP.md](SETUP.md)**  
@@ -242,10 +316,14 @@ docker run -p 8888:8888 matplotlibmasterpro
 - [x] Publication-ready themes
 - [x] Comprehensive troubleshooting guide
 - [x] Curated learning resources
+- [x] Production-ready Python scripts
+- [x] Quick copy-paste examples
+- [x] Unit tests with pytest
 - [ ] PDF report export
 - [ ] Pip-installable library version
 - [ ] Interactive Plotly/Bokeh integrations
 - [ ] Real-world case studies
+- [ ] CI/CD pipeline
 
 ---
 

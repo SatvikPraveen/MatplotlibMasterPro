@@ -70,6 +70,105 @@ This includes all dev tools like ipywidgets, GitPython, and more.
    streamlit run streamlit_app.py
    ```
 
+4. **Run production scripts:**
+   ```bash
+   python scripts/generate_dashboard.py
+   python scripts/generate_3d_plots.py
+   python scripts/batch_export.py
+   ```
+
+5. **Try quick examples:**
+   ```bash
+   python examples/quick_start.py
+   python examples/publication_figure.py
+   ```
+
+---
+
+## 🐍 Running Python Scripts
+
+The project includes production-ready scripts and minimal examples for different use cases.
+
+### **Production Scripts** (`scripts/`)
+
+These demonstrate real-world automation and batch processing:
+
+```bash
+# Generate a comprehensive sales dashboard
+python scripts/generate_dashboard.py
+
+# Create 3D visualizations
+python scripts/generate_3d_plots.py
+
+# Generate statistical plots
+python scripts/generate_statistical_plots.py
+
+# Batch export in multiple formats
+python scripts/batch_export.py
+
+# Create publication-ready figures
+python scripts/create_publication_figures.py
+```
+
+### **Quick Examples** (`examples/`)
+
+Minimal, copy-paste ready scripts for learning:
+
+```bash
+# Your first plot (10 lines)
+python examples/quick_start.py
+
+# Publication-quality figure
+python examples/publication_figure.py
+
+# Process multiple datasets
+python examples/batch_process.py
+
+# Apply custom themes
+python examples/custom_theme_example.py
+
+# Simple animation
+python examples/animation_example.py
+```
+
+---
+
+## 🧪 Running Tests
+
+The project includes comprehensive unit tests demonstrating professional testing practices.
+
+### **Install Testing Dependencies**
+
+```bash
+pip install pytest pytest-cov
+```
+
+Or use the dev requirements:
+```bash
+pip install -r requirements_dev.txt
+```
+
+### **Run All Tests**
+
+```bash
+python -m pytest tests/ -v
+```
+
+### **Run Specific Test File**
+
+```bash
+python -m pytest tests/test_plot_utils.py -v
+python -m pytest tests/test_theme_utils.py -v
+```
+
+### **Run with Coverage Report**
+
+```bash
+python -m pytest tests/ --cov=utils --cov-report=html
+```
+
+This creates an HTML coverage report in `htmlcov/index.html`.
+
 ---
 
 ## 🔍 Verify Installation
