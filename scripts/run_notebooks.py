@@ -78,7 +78,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--keep-going", action="store_true", help="Run every notebook even after a failure.")
     args = parser.parse_args(argv)
 
-    os.environ.setdefault("MPLBACKEND", "Agg")
+    # The kernel inherits this environment. Force the inline backend (headless, but it
+    # still captures figures as PNG outputs); a global MPLBACKEND=Agg would drop them.
+    os.environ["MPLBACKEND"] = "module://matplotlib_inline.backend_inline"
     os.environ.setdefault("PYTHONWARNINGS", "ignore")
     notebooks = select_notebooks(args.patterns)
     if not notebooks:
