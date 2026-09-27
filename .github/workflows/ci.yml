@@ -59,7 +59,7 @@ jobs:
         run: python -m pytest --cov=mplmasterpro --cov-report=xml --cov-report=term
       - name: Upload coverage report
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-xml
           path: coverage.xml
@@ -82,7 +82,7 @@ jobs:
         run: python scripts/run_notebooks.py --timeout 600
       - name: Upload executed notebooks
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: executed-notebooks
           path: build/notebooks/*.ipynb
@@ -125,7 +125,7 @@ jobs:
       - run: python -m pip install build twine
       - run: python -m build
       - run: python -m twine check dist/*
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist/
