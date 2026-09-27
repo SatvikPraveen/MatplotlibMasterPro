@@ -1,0 +1,133 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mplmasterpro"
+dynamic = ["version"]
+description = "Research-grade Matplotlib toolkit: publication figure sizing, uncertainty plots, colour-blind-safe palettes and 23 teaching notebooks."
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.10"
+authors = [{ name = "Satvik Praveen", email = "satvikpraveen707@gmail.com" }]
+maintainers = [{ name = "Satvik Praveen", email = "satvikpraveen707@gmail.com" }]
+keywords = [
+  "matplotlib",
+  "data-visualization",
+  "publication-quality",
+  "scientific-plotting",
+  "reproducible-research",
+  "colorblind",
+  "jupyter",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Education",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Visualization",
+  "Topic :: Education",
+  "Framework :: Jupyter",
+  "Framework :: Matplotlib",
+]
+dependencies = [
+  "matplotlib>=3.10",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyterlab>=4", "ipywidgets>=8", "ipympl>=0.9", "Pillow>=9"]
+app = ["streamlit>=1.30", "Pillow>=9"]
+dev = [
+  "pytest>=7",
+  "pytest-cov>=4",
+  "ruff>=0.5",
+  "nbformat>=5.9",
+  "nbclient>=0.9",
+  "ipykernel>=6",
+  "ipywidgets>=8",
+  "Pillow>=9",
+  "pre-commit>=3",
+  "build>=1",
+]
+all = ["mplmasterpro[notebooks,app,dev]"]
+
+[project.urls]
+Homepage = "https://github.com/SatvikPraveen/MatplotlibMasterPro"
+Documentation = "https://github.com/SatvikPraveen/MatplotlibMasterPro/tree/main/docs"
+Repository = "https://github.com/SatvikPraveen/MatplotlibMasterPro"
+Issues = "https://github.com/SatvikPraveen/MatplotlibMasterPro/issues"
+Changelog = "https://github.com/SatvikPraveen/MatplotlibMasterPro/blob/main/CHANGELOG.md"
+
+[project.scripts]
+mplmasterpro-datasets = "mplmasterpro.datasets:_main"
+
+[tool.setuptools]
+packages = ["mplmasterpro"]
+
+[tool.setuptools.dynamic]
+version = { attr = "mplmasterpro.__version__" }
+
+# ---------------------------------------------------------------------------- tooling
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+extend-exclude = ["notebooks", "exports", "venv", ".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "NPY", "RUF"]
+ignore = [
+  "E501",   # line length is enforced by the formatter
+  "RUF001", # ambiguous unicode (we use × and – in docstrings on purpose)
+  "RUF002",
+  "RUF003",
+  "B008",   # function calls in defaults (np.mean as a default statistic)
+  "SIM108", # ternaries are not always clearer
+  "B905",   # zip(strict=) everywhere is noise for same-length iterables we control
+  "RUF022", # __all__ is grouped by topic on purpose
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011", "NPY002", "RUF059"]
+"examples/*" = ["E402"]
+"scripts/*" = ["E402", "NPY002"]  # legacy global seeds kept for reproducible outputs
+
+[tool.ruff.lint.isort]
+known-first-party = ["mplmasterpro"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers --strict-config"
+markers = [
+  "slow: long-running tests (deselect with -m 'not slow')",
+  "notebook: executes a Jupyter notebook end-to-end",
+]
+filterwarnings = [
+  "ignore:Animation was deleted without rendering anything:UserWarning",
+  "error::DeprecationWarning:mplmasterpro",
+  "error::matplotlib.MatplotlibDeprecationWarning:mplmasterpro",
+]
+
+[tool.coverage.run]
+source = ["mplmasterpro"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]

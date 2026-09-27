@@ -1,9 +1,8 @@
 # 📊 streamlit_app.py — MatplotlibMasterPro Viewer
 
-import streamlit as st
-import pandas as pd
-from PIL import Image
 from pathlib import Path
+
+import streamlit as st
 
 # 📁 Set project root
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -20,12 +19,14 @@ st.markdown(
     """
 )
 
+
 # 🔍 Helper: Display image if it exists
 def display_image(image_path, caption):
     if image_path.exists():
         st.image(str(image_path), caption=caption, use_container_width=True)
     else:
         st.warning(f"❌ Missing: {caption}")
+
 
 # 📁 Exported categories
 categories = {
