@@ -22,5 +22,5 @@ dependencies:
   - pre-commit>=3
   - pip
   - pip:
-      - streamlit>=1.30
+      - streamlit>=1.45
       - -e .

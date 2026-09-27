@@ -1,72 +1,28 @@
-# 🐍 Scripts
+# Scripts
 
-This folder contains **production-ready Python scripts** that demonstrate real-world use cases for matplotlib visualizations.
+Production-style entry points built on `mplmasterpro`. Every script runs from the repository root, writes into `exports/<topic>/` and is executed in CI on each push, so they double as integration tests for the package.
 
-## 📋 Available Scripts
+| Script | Output | What it demonstrates |
+| --- | --- | --- |
+| `generate_dashboard.py` | `exports/dashboards/sales_dashboard_automated.png` | GridSpec dashboard with KPI text box, corporate theme |
+| `generate_3d_plots.py` | `exports/3d_visualizations/*.png` | Surface, wireframe, 3-D scatter and contour |
+| `generate_statistical_plots.py` | `exports/statistical_analysis/*.png` | Box, violin and combined statistical summaries |
+| `batch_export.py` | `exports/batch/*.{png,pdf,svg}` | One figure, three formats, publication theme |
+| `create_publication_figures.py` | `exports/publication/*.pdf` | IEEE, academic multi-panel and colour-blind-safe figures |
+| `run_notebooks.py` | `build/notebooks/*.ipynb` | Headless execution of every notebook (the CI gate) |
+| `generate_api_docs.py` | `docs/API.md` | API reference generated from docstrings |
 
-### 1. `generate_dashboard.py`
-Creates a comprehensive multi-panel dashboard from sales data.
 ```bash
 python scripts/generate_dashboard.py
-```
-**Output:** Professional dashboard in `exports/dashboards/`
-
-### 2. `generate_3d_plots.py`
-Batch generates various 3D visualizations (surface, wireframe, scatter).
-```bash
-python scripts/generate_3d_plots.py
-```
-**Output:** 3D plots in `exports/3d_visualizations/`
-
-### 3. `generate_statistical_plots.py`
-Creates box plots, violin plots, and statistical comparisons.
-```bash
-python scripts/generate_statistical_plots.py
-```
-**Output:** Statistical plots in `exports/statistical_analysis/`
-
-### 4. `batch_export.py`
-Exports plots in multiple formats (PNG, PDF, SVG) for publication.
-```bash
-python scripts/batch_export.py
-```
-**Output:** Multi-format exports in `exports/batch/`
-
-### 5. `create_publication_figures.py`
-Generates publication-ready figures with IEEE/academic formatting.
-```bash
-python scripts/create_publication_figures.py
-```
-**Output:** Publication figures in `exports/publication/`
-
----
-
-## 🎯 Use Cases
-
-- **Automated reporting** - Run scripts on schedule to generate updated dashboards
-- **Batch processing** - Process multiple datasets at once
-- **Production pipelines** - Integrate into data processing workflows
-- **Command-line usage** - Run without Jupyter/interactive environment
-
----
-
-## 🔧 Requirements
-
-All scripts use the project's existing utilities and datasets:
-- `utils/plot_utils.py` - Plotting helper functions
-- `utils/theme_utils.py` - Custom themes
-- `datasets/*.csv` - Sample data
-
-Make sure your virtual environment is activated:
-```bash
-source venv/bin/activate  # or source activate.sh
+python scripts/run_notebooks.py --keep-going          # all notebooks
+python scripts/run_notebooks.py 17 21 --inplace       # refresh two notebooks' outputs
+python scripts/generate_api_docs.py
 ```
 
----
+## Writing a new script
 
-## 💡 Tips
-
-- All scripts can be run independently
-- Outputs are saved to the `exports/` directory
-- Scripts demonstrate professional coding practices (error handling, logging, documentation)
-- Modify parameters at the top of each script to customize output
+- Import from `mplmasterpro` (the scripts add the repository root to `sys.path`, so `pip install -e .` is optional).
+- Load data with `mplmasterpro.datasets.load_dataset(...)`.
+- Prefer `mplmasterpro.publication.save_figure()` over bare `savefig` so the output carries provenance metadata.
+- Create the output directory with `Path(...).mkdir(parents=True, exist_ok=True)` and close figures you do not return.
+- Add the script to the `scripts` job in `.github/workflows/ci.yml` and to the table above.

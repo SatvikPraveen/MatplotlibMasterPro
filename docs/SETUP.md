@@ -1,257 +1,101 @@
-# 🚀 Environment Setup Guide
+# Environment Setup
 
-This guide will help you set up the development environment for **MatplotlibMasterPro**.
+Three supported ways to run the project: a Python virtual environment (recommended for development), Conda, or Docker. All of them install the `mplmasterpro` package in editable mode so notebooks, scripts and tests import the same code.
 
----
-
-## 🐍 Virtual Environment Setup
-
-A virtual environment named `venv` has been created in this project to isolate dependencies.
-
-### **Activate the Virtual Environment**
-
-#### On macOS/Linux:
-```bash
-source venv/bin/activate
-```
-
-#### On Windows:
-```bash
-venv\Scripts\activate
-```
-
-When activated, you'll see `(venv)` in your terminal prompt.
-
-### **Deactivate the Virtual Environment**
-```bash
-deactivate
-```
-
----
-
-## 📦 Installing Dependencies
-
-### **Core Dependencies** (required to run notebooks and streamlit app)
-```bash
-pip install -r requirements.txt
-```
-
-This installs:
-- `matplotlib` - Plotting library
-- `pandas` - Data manipulation
-- `numpy` - Numerical computing
-- `jupyterlab` - Interactive notebooks
-- `streamlit` - Dashboard app
-- `Pillow` - Image processing
-
-### **Development Dependencies** (optional, for full dev environment)
-```bash
-pip install -r requirements_dev.txt
-```
-
-This includes all dev tools like ipywidgets, GitPython, and more.
-
----
-
-## 🎯 Quick Start
-
-1. **Activate the environment:**
-   ```bash
-   source venv/bin/activate   # macOS/Linux
-   ```
-
-2. **Launch JupyterLab:**
-   ```bash
-   jupyter lab
-   ```
-
-3. **Or run the Streamlit dashboard:**
-   ```bash
-   streamlit run streamlit_app.py
-   ```
-
-4. **Run production scripts:**
-   ```bash
-   python scripts/generate_dashboard.py
-   python scripts/generate_3d_plots.py
-   python scripts/batch_export.py
-   ```
-
-5. **Try quick examples:**
-   ```bash
-   python examples/quick_start.py
-   python examples/publication_figure.py
-   ```
-
----
-
-## 🐍 Running Python Scripts
-
-The project includes production-ready scripts and minimal examples for different use cases.
-
-### **Production Scripts** (`scripts/`)
-
-These demonstrate real-world automation and batch processing:
+## 1. Virtual environment
 
 ```bash
-# Generate a comprehensive sales dashboard
-python scripts/generate_dashboard.py
-
-# Create 3D visualizations
-python scripts/generate_3d_plots.py
-
-# Generate statistical plots
-python scripts/generate_statistical_plots.py
-
-# Batch export in multiple formats
-python scripts/batch_export.py
-
-# Create publication-ready figures
-python scripts/create_publication_figures.py
+git clone https://github.com/SatvikPraveen/MatplotlibMasterPro.git
+cd MatplotlibMasterPro
+python -m venv venv
+source venv/bin/activate          # Windows PowerShell: .\venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -e ".[all]"           # package + notebooks + Streamlit + dev tools
+pre-commit install                # optional: run ruff and nbstripout on every commit
 ```
 
-### **Quick Examples** (`examples/`)
+Python 3.10 or newer is required (3.10–3.13 are tested in CI).
 
-Minimal, copy-paste ready scripts for learning:
+### Choosing extras
+
+| Command | Installs |
+| --- | --- |
+| `pip install -e .` | Library only: matplotlib ≥ 3.10, numpy, pandas, scipy |
+| `pip install -e ".[notebooks]"` | + JupyterLab, ipywidgets, ipympl, Pillow |
+| `pip install -e ".[app]"` | + Streamlit viewer |
+| `pip install -e ".[dev]"` | + pytest, pytest-cov, ruff, nbclient, pre-commit, build |
+| `pip install -e ".[all]"` | Everything above |
+
+`requirements.txt` (runtime) and `requirements_dev.txt` (`-e .[all]`) remain for tools that expect them, such as Binder.
+
+### Animations
+
+Saving `.mp4` animations needs the `ffmpeg` binary on your `PATH` (`brew install ffmpeg`, `apt install ffmpeg`, `conda install ffmpeg`). Without it, `save_animation()` warns and writes an animated GIF instead, so notebook 11 still runs.
+
+## 2. Conda
 
 ```bash
-# Your first plot (10 lines)
-python examples/quick_start.py
-
-# Publication-quality figure
-python examples/publication_figure.py
-
-# Process multiple datasets
-python examples/batch_process.py
-
-# Apply custom themes
-python examples/custom_theme_example.py
-
-# Simple animation
-python examples/animation_example.py
+conda env create -f environment.yml
+conda activate mplmasterpro
 ```
 
----
+The environment mirrors `pyproject.toml` and includes ffmpeg.
 
-## 🧪 Running Tests
-
-The project includes comprehensive unit tests demonstrating professional testing practices.
-
-### **Install Testing Dependencies**
+## 3. Docker
 
 ```bash
-pip install pytest pytest-cov
+docker build -t matplotlibmasterpro .
+docker run --rm -p 8888:8888 matplotlibmasterpro              # JupyterLab (token-less, for local use)
+docker run --rm -p 8501:8501 matplotlibmasterpro streamlit    # export viewer
+docker run --rm matplotlibmasterpro test                      # pytest inside the image
+docker run --rm matplotlibmasterpro notebooks --keep-going    # execute every notebook
 ```
 
-Or use the dev requirements:
-```bash
-pip install -r requirements_dev.txt
-```
-
-### **Run All Tests**
-
-```bash
-python -m pytest tests/ -v
-```
-
-### **Run Specific Test File**
+Or with Compose, which mounts `notebooks/`, `exports/` and `datasets/` so your work persists:
 
 ```bash
-python -m pytest tests/test_plot_utils.py -v
-python -m pytest tests/test_theme_utils.py -v
+docker compose up jupyter
+docker compose up streamlit
 ```
 
-### **Run with Coverage Report**
+## Running things
+
+| Task | Command |
+| --- | --- |
+| JupyterLab | `jupyter lab` (open `notebooks/`) |
+| One notebook headlessly | `python scripts/run_notebooks.py 17` |
+| All notebooks headlessly | `python scripts/run_notebooks.py --keep-going` |
+| Refresh committed outputs | `python scripts/run_notebooks.py 17 --inplace` |
+| Production scripts | `python scripts/generate_dashboard.py` (see `scripts/README.md`) |
+| Examples | `python examples/quick_start.py` |
+| Streamlit viewer | `streamlit run streamlit_app.py` |
+| Regenerate datasets | `python generate_all_datasets.py` or `mplmasterpro-datasets` |
+| Tests | `pytest` (add `--cov=mplmasterpro` for coverage) |
+| Lint / format | `ruff check .` / `ruff format .` or `make lint` / `make format` |
+
+`make help` lists every Make target.
+
+## Verifying the installation
 
 ```bash
-python -m pytest tests/ --cov=utils --cov-report=html
+python -c "import mplmasterpro; print(mplmasterpro.__version__)"
+python -c "from mplmasterpro import figure_size; print(figure_size('nature', 2))"
+pytest -q
 ```
 
-This creates an HTML coverage report in `htmlcov/index.html`.
+Expected: the version string, `(7.205, 4.453)`, and `110 passed`.
 
----
+## Notebook kernel
 
-## 🔍 Verify Installation
+The notebooks add the repository root to `sys.path` in their first cell, so they work even without `pip install -e .` as long as JupyterLab is started from the repository root. If you register a dedicated kernel:
 
-Check installed packages:
 ```bash
-pip list
+python -m ipykernel install --user --name mplmasterpro --display-name "Python (mplmasterpro)"
 ```
 
-Check specific package versions:
-```bash
-pip show matplotlib pandas numpy
-```
+## Troubleshooting
 
----
+Backend, font and animation issues are collected in [TROUBLESHOOTING.md](TROUBLESHOOTING.md). Two common ones:
 
-## 🆘 Troubleshooting
-
-### **Virtual environment not activating?**
-Make sure you're in the project directory:
-```bash
-cd /path/to/MatplotlibMasterPro
-```
-
-### **Import errors?**
-Ensure the virtual environment is activated and dependencies are installed:
-```bash
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### **Jupyter kernel not found?**
-Install ipykernel in the virtual environment:
-```bash
-python -m ipykernel install --user --name=matplotlib-env --display-name="Python (MatplotlibMasterPro)"
-```
-
-Then select this kernel from the Jupyter interface.
-
----
-
-## 📋 Current Environment
-
-- **Python Version:** 3.9.6
-- **Virtual Environment:** `venv/` (local to project)
-- **Core Packages Installed:**
-  - matplotlib 3.9.4
-  - pandas 2.3.3
-  - numpy 2.0.2
-  - jupyterlab 4.5.5
-  - streamlit 1.50.0
-  - Pillow 11.3.0
-
----
-
-## 🔄 Updating Dependencies
-
-To update a specific package:
-```bash
-pip install --upgrade matplotlib
-```
-
-To update all packages:
-```bash
-pip install --upgrade -r requirements.txt
-```
-
----
-
-## 🐳 Alternative: Using Docker
-
-If you prefer Docker, use the included Dockerfile:
-```bash
-docker build -t matplotlib-master-pro .
-docker run -p 8888:8888 -p 8501:8501 matplotlib-master-pro
-```
-
----
-
-## 📝 Notes
-
-- The `venv/` folder is git-ignored and won't be committed
-- Always activate the virtual environment before working on the project
-- Use `pip freeze > requirements.txt` to save new dependencies (if needed)
-
-Happy plotting! 📊
+- **`RuntimeError: 'widget' is not a recognised GUI loop or backend name`** in notebook 09 → install `ipympl` (`pip install -e ".[notebooks]"`).
+- **`Axes.boxplot() got an unexpected keyword argument 'labels'`** → you are on Matplotlib ≥ 3.11 with old code; use `tick_labels=` (the repository already does).

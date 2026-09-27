@@ -283,7 +283,7 @@ import matplotlib as mpl
 mpl.rcParams.update(mpl.rcParamsDefault)
 
 # Then apply your theme
-from utils.theme_utils import apply_dark_theme
+from mplmasterpro.theme_utils import apply_dark_theme
 apply_dark_theme()
 ```
 

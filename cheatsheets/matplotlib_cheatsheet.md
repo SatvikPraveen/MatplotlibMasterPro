@@ -317,16 +317,17 @@ plt.plot(x, y, color=(0.2, 0.4, 0.6))
 plt.plot(x, y, color='coral')
 ```
 
-### Themes from utils
+### Themes from `mplmasterpro`
 
 ```python
-from utils.theme_utils import *
+from mplmasterpro.theme_utils import apply_theme, theme_context, list_themes
 
-apply_dark_theme()
-apply_corporate_theme()
-apply_minimal_theme()
-apply_publication_theme()
-apply_colorblind_friendly_theme()
+list_themes()               # ['default', 'dark', 'corporate', 'minimal', 'publication',
+                            #  'colorblind', 'high_contrast', 'pastel', 'ieee', 'nature']
+apply_theme("publication")  # global, until reset_theme()
+
+with theme_context("ieee"): # scoped: rcParams restored afterwards
+    fig, ax = plt.subplots()
 ```
 
 ---
@@ -457,4 +458,4 @@ Use `%matplotlib inline` in Jupyter Notebooks or `%matplotlib notebook` for inte
 
 ---
 
-🧠 **Use this with**: `utils/plot_utils.py` and the `notebooks/` for fast recall.
+🧠 **Use this with**: `mplmasterpro.plot_utils` and the `notebooks/` for fast recall.

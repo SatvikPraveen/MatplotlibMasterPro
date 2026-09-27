@@ -47,7 +47,7 @@ dependencies = [
 
 [project.optional-dependencies]
 notebooks = ["jupyterlab>=4", "ipywidgets>=8", "ipympl>=0.9", "Pillow>=9"]
-app = ["streamlit>=1.30", "Pillow>=9"]
+app = ["streamlit>=1.45", "Pillow>=9"]
 dev = [
   "pytest>=7",
   "pytest-cov>=4",

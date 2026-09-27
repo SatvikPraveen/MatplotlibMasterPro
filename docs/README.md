@@ -1,80 +1,21 @@
-# 📖 Documentation
+# Documentation
 
-This folder contains comprehensive documentation for the **MatplotlibMasterPro** project.
+| Document | Read it when you want to… |
+| --- | --- |
+| [SETUP.md](SETUP.md) | Install the project (venv, Conda or Docker), run notebooks, scripts, the Streamlit viewer and the tests |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Understand the package layout, the `(fig, ax)` contract, and why helpers behave the way they do |
+| [API.md](API.md) | Look up the signature and purpose of every public function (generated from the docstrings) |
+| [REPRODUCIBILITY.md](REPRODUCIBILITY.md) | See exactly what CI verifies and how to regenerate datasets, notebook outputs and figures with provenance |
+| [ROADMAP.md](ROADMAP.md) | Find planned work or pick something to contribute |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Fix backend, font, animation-writer and Jupyter problems |
+| [RESOURCES.md](RESOURCES.md) | Go further: books, courses, style guides, colour tools, datasets |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Open a pull request that passes review and CI |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Know the community standards |
 
-## 📚 Available Documentation
+Project-level files worth knowing: [`README.md`](../README.md) (overview and quick start), [`CHANGELOG.md`](../CHANGELOG.md), [`CITATION.cff`](../CITATION.cff), [`SECURITY.md`](../SECURITY.md), [`pyproject.toml`](../pyproject.toml) (dependencies, extras, ruff and pytest configuration) and the [cheat sheet](../cheatsheets/matplotlib_cheatsheet.md).
 
-### 🚀 [SETUP.md](SETUP.md)
-**Complete environment setup guide**
-- Virtual environment activation
-- Dependency installation
-- Running notebooks, scripts, examples, and tests
-- Troubleshooting installation issues
-- Docker setup instructions
+Regenerate `API.md` after changing public signatures:
 
-### 🔧 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-**Solutions for common matplotlib issues**
-- Display and backend problems
-- Font and text rendering issues
-- Installation errors
-- Plot quality optimization
-- Performance and memory issues
-- Style and theme conflicts
-- Animation problems
-- Jupyter-specific issues
-
-### 📚 [RESOURCES.md](RESOURCES.md)
-**Curated learning materials**
-- Official documentation links
-- Free online courses
-- YouTube tutorials
-- Books (free and paid)
-- Interactive platforms
-- Color and design resources
-- Communities and forums
-- Practice datasets
-- Academic style guides
-
-### 💡 [RECOMMENDATIONS.md](RECOMMENDATIONS.md)
-**Project roadmap and improvement suggestions**
-- Completed features
-- Prioritized enhancements
-- Future development ideas
-- Implementation priorities
-
-### 🤝 [CONTRIBUTING.md](CONTRIBUTING.md)
-**How to contribute to this project**
-- Contribution guidelines
-- Code standards
-- Pull request process
-- Issue reporting
-
-### 📜 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-**Community standards**
-- Expected behavior
-- Unacceptable behavior
-- Enforcement guidelines
-- Contact information
-
----
-
-## 🎯 Quick Links
-
-**Getting Started:**
-1. First time? → [SETUP.md](SETUP.md)
-2. Having issues? → [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-3. Want to learn more? → [RESOURCES.md](RESOURCES.md)
-
-**Contributing:**
-1. Read → [CONTRIBUTING.md](CONTRIBUTING.md)
-2. Follow → [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-
----
-
-## 📌 Main Project Files
-
-- **[../README.md](../README.md)** - Main project overview
-- **[../cheatsheets/matplotlib_cheatsheet.md](../cheatsheets/matplotlib_cheatsheet.md)** - Quick syntax reference
-- **[../scripts/README.md](../scripts/README.md)** - Production scripts guide
-- **[../examples/README.md](../examples/README.md)** - Quick examples guide
-- **[../tests/README.md](../tests/README.md)** - Testing guide
+```bash
+python scripts/generate_api_docs.py
+```
