@@ -150,7 +150,7 @@ def create_dashboard(df):
     best_product = product_revenue.index[0]
 
     stats_text = f"""
-    📊 SUMMARY STATISTICS
+    SUMMARY STATISTICS
 
     Total Revenue: ${total_revenue:,.2f}
     Total Units: {total_units:,}
@@ -178,7 +178,7 @@ def create_dashboard(df):
     )
 
     # Main title
-    fig.suptitle("📈 Sales Performance Dashboard", fontsize=18, fontweight="bold", y=0.98)
+    fig.suptitle("Sales Performance Dashboard", fontsize=18, fontweight="bold", y=0.98)
 
     return fig
 

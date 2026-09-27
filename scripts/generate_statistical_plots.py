@@ -48,7 +48,12 @@ def create_box_plots(data):
 
     # Vertical box plot
     bp1 = ax1.boxplot(
-        data.values(), tick_labels=list(data.keys()), patch_artist=True, notch=True, showmeans=True, meanline=True
+        data.values(),
+        tick_labels=list(data.keys()),
+        patch_artist=True,
+        notch=True,
+        showmeans=True,
+        meanline=True,
     )
 
     # Customize colors
@@ -62,7 +67,13 @@ def create_box_plots(data):
     ax1.grid(axis="y", alpha=0.3)
 
     # Horizontal box plot
-    bp2 = ax2.boxplot(data.values(), tick_labels=list(data.keys()), patch_artist=True, orientation="horizontal", showmeans=True)
+    bp2 = ax2.boxplot(
+        data.values(),
+        tick_labels=list(data.keys()),
+        patch_artist=True,
+        orientation="horizontal",
+        showmeans=True,
+    )
 
     for patch, color in zip(bp2["boxes"], colors):
         patch.set_facecolor(color)
@@ -72,7 +83,7 @@ def create_box_plots(data):
     ax2.set_title("Box Plot Comparison (Horizontal)", fontweight="bold", fontsize=14, pad=15)
     ax2.grid(axis="x", alpha=0.3)
 
-    fig.suptitle("📊 Statistical Distribution Comparison", fontsize=16, fontweight="bold", y=1.02)
+    fig.suptitle("Statistical Distribution Comparison", fontsize=16, fontweight="bold", y=1.02)
     plt.tight_layout()
 
     return fig, "box_plots.png"
@@ -99,7 +110,7 @@ def create_violin_plots(data):
     ax.set_xticks(range(1, len(data) + 1))
     ax.set_xticklabels(data.keys())
     ax.set_ylabel("Values", fontweight="bold", fontsize=12)
-    ax.set_title("🎻 Violin Plot: Distribution Density", fontweight="bold", fontsize=14, pad=15)
+    ax.set_title("Violin Plot: Distribution Density", fontweight="bold", fontsize=14, pad=15)
     ax.grid(axis="y", alpha=0.3)
 
     # Add legend
@@ -152,7 +163,7 @@ def create_combined_plot(data):
     ax.set_xticks(range(1, len(data) + 1))
     ax.set_xticklabels(data.keys())
     ax.set_ylabel("Values", fontweight="bold", fontsize=12)
-    ax.set_title("📊 Combined: Violin + Box Plot", fontweight="bold", fontsize=14, pad=15)
+    ax.set_title("Combined: Violin + Box Plot", fontweight="bold", fontsize=14, pad=15)
     ax.grid(axis="y", alpha=0.3)
 
     plt.tight_layout()
@@ -185,7 +196,7 @@ def create_summary_statistics(data):
 
     ax.set_xlabel("Groups", fontweight="bold", fontsize=12)
     ax.set_ylabel("Values", fontweight="bold", fontsize=12)
-    ax.set_title("📈 Statistical Summary", fontweight="bold", fontsize=14, pad=15)
+    ax.set_title("Statistical Summary", fontweight="bold", fontsize=14, pad=15)
     ax.set_xticks(x)
     ax.set_xticklabels(groups)
     ax.legend()
