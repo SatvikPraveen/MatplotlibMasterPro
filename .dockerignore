@@ -1,35 +1,24 @@
-# Byte-compiled / cache files
+.git
+.github
+venv/
+.venv/
+env/
+mp_py_env/
 __pycache__/
 *.py[cod]
-*.so
-*.pyd
-*.pyo
-
-# Jupyter Notebook Checkpoints
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
 .ipynb_checkpoints/
-
-# VS Code settings
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
 .vscode/
-
-# Project virtual environment
-mp_py_env/
-
-# Streamlit cache
-.streamlit/
-
-# Docker-related override files
-docker-compose.override.yml
-
-# System files
+.idea/
 .DS_Store
-
-# Logs
 *.log
-
-# Env files
 .env
 *.env
-
-# Exclude README and LICENSE from container (optional)
-README.md
-LICENSE
+docker-compose.override.yml

@@ -1,0 +1,27 @@
+name: Bug report
+description: Something produced an error or a wrong figure
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the traceback or a screenshot of the figure.
+    validations: { required: true }
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproducible example
+      render: python
+    validations: { required: true }
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: "python -c 'import mplmasterpro, matplotlib, numpy, pandas; print(mplmasterpro.__version__, matplotlib.__version__, numpy.__version__, pandas.__version__)'"
+    validations: { required: true }
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options: [Notebook, Script/example, Library import, Streamlit app, Docker]

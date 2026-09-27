@@ -1,0 +1,26 @@
+# Conda environment for MatplotlibMasterPro (mirrors pyproject.toml extras).
+#   conda env create -f environment.yml && conda activate mplmasterpro
+name: mplmasterpro
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10,<3.14
+  - matplotlib>=3.10
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy>=1.10
+  - pillow>=9
+  - jupyterlab>=4
+  - ipywidgets>=8
+  - ipympl>=0.9
+  - ffmpeg
+  - pytest>=7
+  - pytest-cov>=4
+  - ruff>=0.5
+  - nbformat>=5.9
+  - nbclient>=0.9
+  - pre-commit>=3
+  - pip
+  - pip:
+      - streamlit>=1.30
+      - -e .

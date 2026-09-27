@@ -1,0 +1,46 @@
+name: Release
+
+# Publishes a GitHub Release with the built sdist/wheel whenever a `v*` tag is
+# pushed. PyPI publishing is intentionally left out until a trusted-publisher
+# is configured for the project; `dist/` can be uploaded manually with twine.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish GitHub release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify tag matches package version
+        run: |
+          python -m pip install -e . --no-deps
+          PKG=$(python -c "import mplmasterpro; print(mplmasterpro.__version__)")
+          TAG="${GITHUB_REF_NAME#v}"
+          test "$PKG" = "$TAG" || { echo "package version $PKG != tag $TAG"; exit 1; }
+      - run: python -m pip install build twine
+      - run: python -m build && python -m twine check dist/*
+      - name: Extract changelog section
+        run: |
+          python - <<'PY'
+          import re, os, pathlib
+          tag = os.environ["GITHUB_REF_NAME"].lstrip("v")
+          text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          m = re.search(rf"## \[{re.escape(tag)}\].*?(?=\n## \[|\Z)", text, flags=re.S)
+          pathlib.Path("release_notes.md").write_text(m.group(0) if m else f"Release {tag}", encoding="utf-8")
+          PY
+      - uses: softprops/action-gh-release@v2
+        with:
+          body_path: release_notes.md
+          files: dist/*
+          generate_release_notes: true

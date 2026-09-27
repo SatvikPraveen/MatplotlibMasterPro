@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/SatvikPraveen/MatplotlibMasterPro/discussions
+    about: Ask how to achieve a particular figure or share what you built.

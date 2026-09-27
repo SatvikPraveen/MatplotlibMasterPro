@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use MatplotlibMasterPro in your research or teaching, please cite it as below."
+type: software
+title: "MatplotlibMasterPro: a research-grade Matplotlib toolkit and notebook curriculum"
+version: 1.0.0
+date-released: 2026-09-27
+license: GPL-3.0-or-later
+repository-code: "https://github.com/SatvikPraveen/MatplotlibMasterPro"
+url: "https://github.com/SatvikPraveen/MatplotlibMasterPro"
+authors:
+  - family-names: Praveen
+    given-names: Satvik
+    email: satvikpraveen707@gmail.com
+keywords:
+  - matplotlib
+  - data visualization
+  - publication-quality figures
+  - reproducible research
+  - colour-blind accessibility
+  - jupyter notebooks
+abstract: >-
+  MatplotlibMasterPro pairs a 23-notebook Matplotlib curriculum with an
+  installable Python package (mplmasterpro) providing journal-specific figure
+  sizing, metadata-aware export, bootstrap confidence bands, raincloud plots,
+  colour-vision-deficiency simulation and quantitative palette checks. Every
+  notebook, script and dataset is executed or regenerated in continuous
+  integration so the published figures are reproducible.
