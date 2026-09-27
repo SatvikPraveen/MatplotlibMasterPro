@@ -5,8 +5,6 @@
 [![CI](https://github.com/SatvikPraveen/MatplotlibMasterPro/actions/workflows/ci.yml/badge.svg)](https://github.com/SatvikPraveen/MatplotlibMasterPro/actions/workflows/ci.yml)
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](pyproject.toml)
 [![Matplotlib ≥ 3.10](https://img.shields.io/badge/matplotlib-%E2%89%A5%203.10-11557c.svg)](https://matplotlib.org/)
-[![Tests: 110](https://img.shields.io/badge/tests-110%20passing-brightgreen.svg)](tests/)
-[![Coverage: 89%](https://img.shields.io/badge/coverage-89%25-green.svg)](tests/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Cite](https://img.shields.io/badge/cite-CITATION.cff-lightgrey.svg)](CITATION.cff)
